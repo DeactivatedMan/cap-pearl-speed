@@ -10,6 +10,7 @@ public final class CapPearlSpeed extends JavaPlugin {
 
     private double maxSpeed;
     private boolean killPearls;
+    private boolean devMode;
 
     @Override
     public void onEnable() {
@@ -19,6 +20,7 @@ public final class CapPearlSpeed extends JavaPlugin {
 
         maxSpeed = getConfig().getDouble("max-speed");
         killPearls = getConfig().getBoolean("kill-pearl");
+        devMode = getConfig().getBoolean("dev-mode");
         long runEvery = getConfig().getLong("run-every");
 
         Bukkit.getScheduler().runTaskTimer(this, this::IteratePearls, runEvery, runEvery);
@@ -29,9 +31,9 @@ public final class CapPearlSpeed extends JavaPlugin {
             for (EnderPearl pearl : world.getEntitiesByClass(EnderPearl.class)) {
 
                 Vector velocity = pearl.getVelocity();
+                if (devMode) getLogger().info("Pearl is at: "+ velocity.length());
 
                 if (velocity.length() > maxSpeed) {
-                    getLogger().info("Pearl is speeding! "+ velocity.length());
 
                     if (killPearls) pearl.remove();
                     else pearl.setVelocity(velocity.normalize().multiply(maxSpeed));

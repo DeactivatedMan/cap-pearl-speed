@@ -1,3 +1,4 @@
-max-speed: 5      # Ender pearls below this speed are unaffected
+max-speed: 3      # Ender pearls below this speed are unaffected, anything over 3 is practically impossible *without* a cannon
 kill-pearl: false # Destroys speeding pearls if enabled
 run-every: 20     # How many ticks between speed checks, 20 = 1 second
+dev-mode: false   # Just logs every pearl's speed, keep disabled unless you want to change the max-speed value
