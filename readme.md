@@ -8,7 +8,7 @@ This plugin limits ender pearls to always be under a certain speed. The cap and 
 ![Showcase of what happens when a pearl is thrown, it instantly slows down and falls to the ground.](https://cdn.modrinth.com/data/dt1vdrVP/images/7a8c13031ff2c91a4682d13cdad717e32e386946.gif)
 
 ## Config
-`max-speed` - The (roughly) maximum speed a pearl can travel with this plugin
-`kill-pearl` - Destroys any speeding pearls if enabled
-`run-every` - How many ticks between speed checks, 20 means one check a second
-`dev-mode` - Logs every pearl's speed, only enable when tweaking the max speed
+`max-speed` - The (roughly) maximum speed a pearl can travel with this plugin   
+`kill-pearl` - Destroys any speeding pearls if enabled   
+`run-every` - How many ticks between speed checks, 20 means one check a second   
+`dev-mode` - Logs every pearl's speed, only enable when tweaking the max speed   
