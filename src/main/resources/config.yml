@@ -1,0 +1,3 @@
+max-speed: 5      # Ender pearls below this speed are unaffected
+kill-pearl: false # Destroys speeding pearls if enabled
+run-every: 20     # How many ticks between speed checks, 20 = 1 second
