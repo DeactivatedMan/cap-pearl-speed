@@ -1,3 +1,5 @@
+*Note that all showcase GIFs are using a max speed of 0.1, the default max speed will not affect regular thrown pearls*
+
 ## Why use this plugin
 You may just want to make ender pearls slower to reduce their range and make them less overpowered. Though the main focus of this plugin is to try prevent players from abusing the chunkloading capabilities of pearls to lag the server.
 
