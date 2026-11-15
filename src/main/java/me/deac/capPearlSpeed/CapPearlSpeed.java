@@ -23,22 +23,20 @@ public final class CapPearlSpeed extends JavaPlugin {
         devMode = getConfig().getBoolean("dev-mode");
         long runEvery = getConfig().getLong("run-every");
 
-        Bukkit.getScheduler().runTaskTimer(this, this::IteratePearls, runEvery, runEvery);
+        Bukkit.getScheduler().runTaskTimer(this, this::iteratePearls, runEvery, runEvery);
     }
 
-    private void IteratePearls() {
+    private void iteratePearls() {
         for (World world : Bukkit.getWorlds()) {
             for (EnderPearl pearl : world.getEntitiesByClass(EnderPearl.class)) {
 
                 Vector velocity = pearl.getVelocity();
                 if (devMode) getLogger().info("Pearl is at: "+ velocity.length());
 
-                if (velocity.length() > maxSpeed) {
+                if (velocity.length() < maxSpeed) continue; // Too slow, skip this one
 
-                    if (killPearls) pearl.remove();
-                    else pearl.setVelocity(velocity.normalize().multiply(maxSpeed));
-                }
-
+                if (killPearls) pearl.remove();
+                else pearl.setVelocity(velocity.normalize().multiply(maxSpeed));
             }
         }
     }
